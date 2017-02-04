@@ -6,6 +6,7 @@ extern int rowA;
 extern int colA;
 extern int layer_count;		//No of layers in NN including input & output layer
 extern int border;
+extern double max_o, min_o, max_i, min_i;
 extern double* training_error;
 extern double eta;
 extern double** data_set;
@@ -22,6 +23,8 @@ void nn_parameter_set();
 void param_read();
 double rand_gen(double mean, double stddev);
 double threshold(int flag, int deriv, double net_val);
+double decoder(double decrypt);
+double encoder(double encrypt);
 void net_construct();
 void forward_propagation(int pattern_no);
 void backpropagation();
