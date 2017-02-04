@@ -11,12 +11,13 @@
 double** training_data = 0;
 double** test_data = 0;
 int border = 0;
+double max_o,min_o,max_i,min_i;
+
 using namespace std;
 void encode_data()
 {
 	string lineA;
 	int i;
-	double max_o,min_o,max_i,min_i;
 	string filename;
 	ifstream fileIN;
 
