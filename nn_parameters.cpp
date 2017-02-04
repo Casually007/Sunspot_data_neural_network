@@ -9,7 +9,7 @@
 #include "fnn.h"
 using namespace std;
 void nn_parameter_set() {
-	int n_hidden,i_p,temp;
+	int n_hidden,i_p,temp,o_p;
 	std::ofstream outfile;
 	outfile.open("neural_net_parameter.txt", ios::out | ios::trunc);
 	cout << "\n How much hidden layers do you want?" << endl;
@@ -30,6 +30,8 @@ void nn_parameter_set() {
 	}
 	outfile << "#No. of output nodes:";
 	outfile << endl;
-	outfile << i_p;
+	cout << "\n Please enter nos. of output nodes" << endl;
+	cin >> o_p;
+	outfile << o_p;
 	outfile << endl;
 }
