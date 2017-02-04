@@ -45,15 +45,15 @@ void forward_propagation(int pattern_no) {
 
 				if (pattern_no < border) {
 					//regression data
-					neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].net_j + neural_layers[0].neural_unit[j].weight[0] * training_data[pattern_no + i][1];
+					neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].net_j + neural_layers[0].neural_unit[j].weight[0] * training_data[pattern_no + i][0];
 					//time series data
-					//neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].weight[0] * training_data[pattern_no + i][1];
+					//neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].weight[0] * training_data[pattern_no + i][0];
 				}
 				else {
 					//regression data
-					neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].net_j + neural_layers[0].neural_unit[j].weight[0] * test_data[pattern_no - border + i][1];
+					neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].net_j + neural_layers[0].neural_unit[j].weight[0] * test_data[pattern_no - border + i][0];
 					//time series data
-					//neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].weight[0] * test_data[pattern_no - border + i][1]; 
+					//neural_layers[0].neural_unit[j].net_j = neural_layers[0].neural_unit[j].weight[0] * test_data[pattern_no - border + i][0]; 
 				}
 		}
 			neural_layers[0].neural_unit[j].o_p_val = threshold(neural_layers[0].threshold, derv, neural_layers[0].neural_unit[j].net_j);
