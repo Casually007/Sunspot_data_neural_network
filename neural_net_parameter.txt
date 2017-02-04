@@ -2,7 +2,5 @@
 1
 #No. of  nodes in hidden layer 1:
 10
-#No. of  nodes in hidden layer 2:
-10
 #No. of output nodes:
 1
