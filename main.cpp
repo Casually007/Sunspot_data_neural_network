@@ -46,7 +46,8 @@ int main()
 		forward_propagation(i);
 		for (int j = 0; j < num[layer_count - 1]; j++) {
 			//train_error_LSE[i] = training_data[i][1] - neural_layers[layer_count - 2].neural_unit[0].o_p_val;
-			temp = training_data[i+j][1] - neural_layers[layer_count - 2].neural_unit[j].o_p_val;
+			temp = decoder(training_data[i+j][1]) - decoder(neural_layers[layer_count - 2].neural_unit[j].o_p_val);
+			temp = encoder(temp);
 			training_error[j] = temp;
 			train_error_LSE[i] = train_error_LSE[i] + 0.5*temp * temp;
 		}
@@ -60,8 +61,9 @@ int main()
 	//untrained data response
 	for (int i = border; i < rowA; i++) {
 		forward_propagation(i);
-		temp = test_data[i - border][1] - neural_layers[layer_count - 2].neural_unit[0].o_p_val;
-		cout << test_data[i -border][1] << " " << neural_layers[layer_count - 2].neural_unit[0].o_p_val << " " << temp << endl;
+		temp = decoder(test_data[i - border][1]) - decoder(neural_layers[layer_count - 2].neural_unit[0].o_p_val);
+		cout << decoder(test_data[i -border][1]) << " " << decoder(neural_layers[layer_count - 2].neural_unit[0].o_p_val) << " " << temp << endl;
+		//cout << test_data[i - border][1] << " " << neural_layers[layer_count - 2].neural_unit[0].o_p_val << " " << temp << endl;
 	}
 
 
