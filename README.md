@@ -1,1 +1,1 @@
-# Suspot_data_neural_network
+# Sunspot_data_neural_network
